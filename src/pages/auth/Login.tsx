@@ -72,7 +72,7 @@ const LoginPage = () => {
       <Paper withBorder shadow="md" p={30} mt={30} radius="md">
         <form onSubmit={onSubmit}>
           <TextInput
-            defaultValue={"user@example.com"} // to be removed
+            // defaultValue={"user@example.com"}
             label="Email"
             required
             {...register("email")}
@@ -82,7 +82,7 @@ const LoginPage = () => {
             placeholder="you@mantine.dev"
           />
           <PasswordInput
-            defaultValue={"password123"} // to be removed
+            // defaultValue={"password123"} 
             label="Password"
             required
             placeholder="Your password"

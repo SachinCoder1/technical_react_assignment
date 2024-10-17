@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./App";
 import Landing from "./pages/landing/Landing";
-import LoginPage from "./pages/auth/Logn";
+import LoginPage from "./pages/auth/Login";
 import PrivateRoute from "./layout/PrivateRoute";
 import ResourceListPage from "./pages/resources/Resource";
 import ResourceDetailPage from "./pages/resources/PerticularResource";
