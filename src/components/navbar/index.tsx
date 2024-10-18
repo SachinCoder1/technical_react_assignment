@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
             ) : (
               <>
                 {/* Show Logout button if authenticated */}
-                <Button component={Link} to="/person">
+                <Button component={Link} to="/">
                   Main
                 </Button>
                 <Button onClick={handleLogout} variant="default">

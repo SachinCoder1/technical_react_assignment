@@ -13,6 +13,7 @@ import {
   Container,
   Button,
   Flex,
+  Box,
 } from "@mantine/core";
 
 import { useForm } from "react-hook-form";
@@ -35,7 +36,7 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/person");
+      navigate("/");
     }
   }, [isAuthenticated, navigate]);
 
@@ -51,7 +52,7 @@ const LoginPage = () => {
     if (data.email === "user@example.com" && data.password === "password123") {
       const token = "mock-token"; // Mock token, replace with real token
       login(token);
-      navigate("/person"); // Redirect to protected route
+      navigate("/"); // Redirect to protected route
     } else {
       alert("Invalid credentials"); // Handle invalid login
     }
@@ -69,10 +70,35 @@ const LoginPage = () => {
         </Anchor>
       </Text>
 
+      {/* Test credential section -- */}
+      <Box
+        mt="lg"
+        p="md"
+        sx={(theme) => ({
+          backgroundColor: theme.colors.gray[0],
+          borderRadius: theme.radius.md,
+          textAlign: "center",
+          border: `1px solid ${theme.colors.gray[3]}`,
+        })}
+      >
+        <Text weight={700} color="dark" mb={5}>
+          Test Credentials
+        </Text>
+        <Text color="dimmed" size="sm">
+          Use the following credentials to log in:
+        </Text>
+        <Text size="sm" mt={3}>
+          <strong>Email:</strong> user@example.com
+        </Text>
+        <Text size="sm">
+          <strong>Password:</strong> password123
+        </Text>
+      </Box>
+
+      {/* Main form */}
       <Paper withBorder shadow="md" p={30} mt={30} radius="md">
         <form onSubmit={onSubmit}>
           <TextInput
-            // defaultValue={"user@example.com"}
             label="Email"
             required
             {...register("email")}
@@ -82,7 +108,6 @@ const LoginPage = () => {
             placeholder="you@mantine.dev"
           />
           <PasswordInput
-            // defaultValue={"password123"} 
             label="Password"
             required
             placeholder="Your password"

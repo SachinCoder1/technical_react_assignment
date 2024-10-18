@@ -48,7 +48,11 @@ const ResourceListPage = () => {
     .sort((a: any, b: any) => (sorted ? a.name.localeCompare(b.name) : 0));
 
   if (isLoading) {
-    return <Loader />;
+    return (
+      <Center>
+        <Loader />
+      </Center>
+    );
   }
 
   if (isError) {

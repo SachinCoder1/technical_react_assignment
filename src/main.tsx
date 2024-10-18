@@ -16,19 +16,15 @@ export const routes = [
     children: [
       {
         path: "/",
-        element: <Landing />, // Default public landing page
-      },
-      {
-        path: "/login",
-        element: <LoginPage />, // Public login route
-      },
-      {
-        path: "/person",
         element: (
           <PrivateRoute>
             <ResourceListPage /> {/* Protected landing page */}
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/login",
+        element: <LoginPage />, // Public login route
       },
       {
         path: "/person/:id", // :id is the dynamic parameter

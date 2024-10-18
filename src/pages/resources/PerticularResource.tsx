@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Card, Grid, Badge, List, Loader, Text, Paper } from "@mantine/core";
+import { Card, Grid, Badge, List, Loader, Text, Paper, Center } from "@mantine/core";
 import { fetchFilms, fetchPersonById } from "../../apis/swapi";
 import { useQuery } from "@tanstack/react-query";
 
@@ -21,7 +21,11 @@ const ResourceDetailPage = () => {
   );
 
   if (isLoading) {
-    return <Loader />;
+    return (
+      <Center>
+        <Loader />
+      </Center>
+    );
   }
 
   if (isError) {
